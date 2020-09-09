@@ -73,6 +73,11 @@ plt.show()
 predictions = lr_model.transform(test_df)
 predictions.show(10)
 
+# Model summary
+summary = lr_model.binarySummary
+print(summary)
+
 # evaluating predictions
 evaluator = BinaryClassificationEvaluator()
 print('Evaluations: ', evaluator.evaluate(predictions))
+
