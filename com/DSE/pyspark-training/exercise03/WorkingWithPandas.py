@@ -15,5 +15,13 @@ plt.show()
 df.plot(x ='Year', y='Unemployment_Rate', kind = 'line')
 plt.show()
 
+Data2 = {'Tasks': [300, 500, 700]}
+df2 = DataFrame(Data, columns=['Tasks'], index=['Tasks Pending', 'Tasks Ongoing', 'Tasks Completed'])
+
+# pie chart
+df.plot.pie(y='Tasks', figsize=(5, 5), autopct='%1.1f%%', startangle=90)
+plt.show()
+
+
 # saving generated graph
 # plt.savefig("graph1.png")
