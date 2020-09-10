@@ -19,7 +19,7 @@ words = sc.parallelize(
      "spark vs hadoop",
      "pyspark",
      "pyspark and spark"]
-)
+).cache()
 
 print(words.take(3))
 print(words.count())
@@ -71,3 +71,14 @@ wordCounts = words.countByValue()
 # count words with reduce() and groupByKey() transformations
 
 wordCounts.foreach(f)
+
+####################################################################
+
+# Exercise 4: join() operation
+x = sc.parallelize([("spark", 1), ("hadoop", 4)])
+y = sc.parallelize([("spark", 2), ("hadoop", 5)])
+joined = x.join(y)
+final_joined = joined.collect()
+print(final_joined)
+
+##################################################################
