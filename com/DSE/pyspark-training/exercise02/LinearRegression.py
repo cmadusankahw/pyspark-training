@@ -1,4 +1,3 @@
-import np as np
 from pyspark.sql import SparkSession
 from matplotlib import pyplot as plt
 from pandas.plotting import scatter_matrix
@@ -73,6 +72,11 @@ plt.show()
 predictions = lr_model.transform(test_df)
 predictions.show(10)
 
+# Model summary
+summary = lr_model.binarySummary
+print(summary)
+
 # evaluating predictions
 evaluator = BinaryClassificationEvaluator()
 print('Evaluations: ', evaluator.evaluate(predictions))
+
